@@ -1,0 +1,146 @@
+.test_result.show {
+    display: inline-block;
+    text-align: center;
+    overflow: auto;
+    padding: 14px;
+}
+
+.test_result_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFE699;
+    font-family: 'neoDGM';
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 0;
+}
+
+.test_result_index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 0;
+    font-family: 'neoDGM';
+}
+
+.test_result_intro {
+    padding-bottom: 10px;
+}
+
+.test_result_gamename {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.test_result_img {
+    padding: 20px 0;
+}
+
+img#mbti_img {
+    height: 160px;
+    width: 280px;
+}
+
+.test_result_text {
+    line-height: 2;
+    padding: 20px 0;
+}
+
+.test_result_total {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'neoDGM';
+}
+
+.test_result_total_intro {
+    padding: 15px 0 10px 0;
+}
+
+.test_result_totalnum {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.test_result_ratio_graph {
+    margin: 40px 0;
+    background-color: #fff;
+    border-radius: 100%;
+    width: 3.2cm;
+    height: 3.2cm;
+}
+
+.test_result_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.test_result_footer a {
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+.test_result_footer a:hover .test_result_redo_char,
+.test_result_footer a:hover .test_result_fullpage_char {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+    -webkit-transition: transform 0.2s ease 0s;
+    transition: transform 0.2s ease 0s;
+}
+
+.test_result_footer a:hover .test_result_redo_text,
+.test_result_footer a:hover .test_result_fullpage_text {
+    background-color: #fff;
+    color: #404040;
+    font-weight: 700;
+}
+
+.test_result_footer a:hover .test_result_redo_text::after,
+.test_result_footer a:hover .test_result_fullpage_text::after {
+    background-color: #fff;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.test_result_redo_text,
+.test_result_fullpage_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 15%;
+    font-family: 'neoDGM';
+    width: 90px;
+    height: 50px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.test_result_redo_text::after,
+.test_result_fullpage_text::after {
+    position: absolute;
+    content: "";
+    top: 45px;
+    width: 11px;
+    height: 11px;
+    background-color: #404040;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    transform: rotate(135deg);
+}
+
+.test_result_redo_char, .test_result_fullpage_char {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 20px 40px;
+}

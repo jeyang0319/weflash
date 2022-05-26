@@ -1,0 +1,246 @@
+@font-face {
+    font-family: "THEFACESHOP INKLIPQUID";
+    src: url(../fonts/THEFACESHOP\ INKLIPQUID.TTF);
+}
+
+.question_page {
+    display: none;
+    z-index: 100;
+}
+
+.question_page.show {
+    display: inline-block;
+    text-align: center;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    /* padding: 14px; */
+}
+
+.topwords {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFE699;
+    font-family: "THEFACESHOP INKLIPQUID";              
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px 0;
+}
+
+.question_icon {
+    display: flex;
+    justify-content: center;
+    align-items: start; 
+    margin: 10px;
+}
+
+.question {
+    display:block;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px;
+    height: 10%
+}
+
+.answers {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+}
+
+.answer1, .answer2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.packman1 {
+    margin: 0 130px 20px 0;
+}
+
+.packman2 {
+    margin: 20px 0 0 95px;
+}
+
+.packman1 img, .packman2 img{
+    width: 0.8cm;
+}
+
+.packman2 img{
+    transform: scaleX(-1);
+}
+
+.answer1_text, .answer2_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #404040;
+    border: 1px solid #FFE669;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.answer1_text::after{
+    position: absolute;
+    content: "";
+    top: -7px;
+    left: 30px;
+    width: 11px;
+    height: 11px;
+    background-color: #404040;
+    border-top: 1px solid #FFE669;
+    border-right: 1px solid #FFE669;
+    transform: rotate(-45deg);
+}
+
+.answer2_text::after {
+    position: absolute;
+    content: "";
+    top: 45px;
+    left: 140px;
+    width: 11px;
+    height: 11px;
+    background-color: #404040;
+    border-top: 1px solid #FFE669;
+    border-right: 1px solid #FFE669;
+    transform: rotate(135deg);
+}
+
+.answer1.click , .answer2.click {
+    transform: scale(1.1);
+    
+}
+
+.answer1.click .packman1 {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    -webkit-transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
+    animation: img_top_ani;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.answer2.click .packman2 {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+    -webkit-transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
+    animation: img_bot_ani;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.answer1:hover .answer1_text,
+.answer2:hover .answer2_text,
+.answer1.click .answer1_text,
+.answer2.click .answer2_text {
+    background-color: #fff;
+    opacity: 100%;
+    color: #404040;
+    border: 1px solid #404040;
+    font-weight: 800;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.answer1:hover .answer1_text::after,
+.answer1.click .answer1_text::after {
+    position: absolute;
+    content: "";
+    top: -6px;
+    left: 30px;
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border: 0;
+
+}
+
+.answer2:hover .answer2_text::after,
+.answer2.click .answer2_text::after {
+    position: absolute;
+    content: "";
+    top: 44px;
+    left: 140px;
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border: 0;
+}
+
+@keyframes img_top_ani {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(45deg)
+    }
+}
+
+@keyframes img_bot_ani {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(45deg)
+    }
+}
+
+.roading .roading_txt {
+    font-size: 35px;
+    font-weight: 900;
+    color: #FFE669;
+    transition: transform 0.5s ease 0s;
+    animation: roading_txt_ani;
+    animation-duration: 3s;
+}
+
+.roading .roading_img {
+    position: absolute;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFE669;
+    top: 60%;
+    left: 0;
+    animation: roading_img_ani;
+    animation-duration: 5s;
+}
+
+.man_img {
+    width: 15px;
+}
+
+
+@keyframes roading_txt_ani {
+    from {
+        margin-top: 150px;
+    }
+
+    to {
+        margin-top: 220px;
+    }
+}
+
+@keyframes roading_img_ani {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 160px;
+    }
+}

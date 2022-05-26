@@ -1,0 +1,210 @@
+.display {
+    position: relative;
+}
+
+.tetris.none {
+    display: none;
+}
+
+.tetris {
+    position: absolute;
+    width: 6.7cm;
+    height: 12.2cm;
+    overflow: auto;
+    bottom: calc(100% - 13cm);
+    /* z-index: 0; */
+}
+
+.tetris img {
+    position: absolute;
+    opacity: 20%;
+    transition-delay: 0.2s;
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.2;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.2;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:0.2;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
+.tetris img.none {
+    animation: fadeout 2.5s;
+    -moz-animation: fadeout 2.5s; /* Firefox */
+    -webkit-animation: fadeout 2.5s; /* Safari and Chrome */
+    -o-animation: fadeout 2.5s; /* Opera */
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@-moz-keyframes fadeout { /* Firefox */
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeout { /* Safari and Chrome */
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@-o-keyframes fadeout { /* Opera */
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.tetris_block_20, .tetris_block_17, .tetris_block_19, 
+.tetris_block_15, .tetris_block_13, .tetris_block_11, 
+.tetris_block_10, .tetris_block_7, .tetris_block_6, 
+.tetris_block_5, .tetris_block_3, .tetris_block_2 {
+    width: calc(100% / 3);
+}
+
+.tetris_block_16, .tetris_block_12, .tetris_block_18, 
+.tetris_block_14, .tetris_block_9 {
+    width: calc(100% / 6);
+}
+
+.tetris_block_11, .tetris_block_8, .tetris_block_4, .tetris_block_1 {
+    width: calc(100% / 2);
+}
+
+.tetris_block_20 {
+    top:0;
+    left:0;
+}
+
+.tetris_block_19 {
+    right: 0;
+}
+
+.tetris_block_18 {
+    top: calc(100% / 11);
+    right: calc(100% / 6);
+}
+
+.tetris_block_17 {
+    left: calc(100% / 6);
+}
+
+.tetris_block_16 {
+    left: calc(100% / 2);
+}
+
+.tetris_block_15 {
+    top: calc(100% / 5.5);
+    left: calc(100% / 6);
+}
+
+.tetris_block_14 {
+    top: calc(100% / (11 / 3));
+    left: calc(100% / 2);
+}
+
+.tetris_block_13 {
+    top: calc(100% / 5.5);
+    right: 0;
+}
+
+.tetris_block_12 {
+    top: calc(100% / 5.5);
+    left: 0;
+}
+
+.tetris_block_11 {
+    top: calc(100% / (11 / 4));
+    left: calc(100% / 6);
+}
+
+.tetris_block_10 {
+    top: calc(100% / (11 / 4));
+    right: 0;
+}
+
+.tetris_block_9 {
+    top: calc(100% / (11 / 6));
+    right: 0;
+}
+
+.tetris_block_8 {
+    top: calc(100% / (11 / 6));
+    right: calc(100% / 6);
+}
+
+.tetris_block_7 {
+    top: calc(100% / (11 / 5));
+}
+
+.tetris_block_6 {
+    bottom: calc(100% / (11 / 2));
+    left: calc(100% / 3);
+}
+
+.tetris_block_5 {
+    bottom: calc(100% / 11);
+}
+
+.tetris_block_4 {
+    right: 0;
+    bottom: calc(100% / 11);
+}
+
+.tetris_block_3 {
+    bottom: 0;
+    left: calc(100% / 3);
+}
+
+.tetris_block_2 {
+    bottom: 0;
+}
+
+.tetris_block_1 {
+    bottom: 0;
+    right: 0;
+}

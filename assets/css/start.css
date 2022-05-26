@@ -1,0 +1,261 @@
+.main_page {
+    display: block;
+    height: 100%;
+    padding: 0;
+}
+
+.main_page.none {
+    display: none;
+}
+.main {
+    position: relative;
+    margin: 0;
+    height: 70%;
+    margin-top: 0.5cm;
+    margin-left: 0.5cm;
+    margin-right: 0.5cm;
+    border: 1px solid #404040;
+    background-color: #404040;
+}
+
+.display.show {
+    display: block;
+    position: relative;
+    margin: 0;
+    align-content: center;
+    justify-content: center;
+    width: 8.1cm;
+    height: 100%;
+    background-color: #404040;
+    transition-duration: 1s;
+    z-index: 10;
+}
+
+.display.start {
+    display: flex;
+    position: relative;
+    margin: 0;
+    align-content: center;
+    justify-content: center;
+    width: 8.1cm;
+    height: 100%;
+    background-color: #404040;
+    transition-duration: 1s;
+}
+
+.title {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(241 51 212), 
+    0 0 100px rgb(241 51 212), 0 0 10px rgb(241 51 212), 0 0 100px rgb(241 51 212), 0 0 10px rgb(241 51 212);
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30%;
+    font-size: 20px;
+}
+
+.title.start {
+    display: block;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 50%;
+    font-size: 22px;
+    transition-duration: 1s;
+}
+
+
+
+.ready {
+    display: none;
+    margin-top: 40%;
+}
+
+
+
+.ready.show {
+    display: block;
+}
+
+.start {
+    display: none;
+    margin-top: 40%;
+}
+
+.start.show {
+    display: block;
+}
+
+.ready_button {
+    display: block;
+    width: 50%;
+    margin: auto;
+    background: none;
+    text-align: cener;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 3px #fff, 0 0 9px rgb(241 51 212),
+        0 0 23px #fff, 0 0 45px #fff, 0 0 75px #fff, 0 0 32px #fff;
+    }
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+
+.ready_button:hover {
+    text-shadow: 0px 3px 5px #909090;
+    transform: translateY(-0.25em);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    animation: none;
+}
+
+.start_button {
+    display: block;
+    width: 70%;
+    margin: auto;
+    background: none;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px;
+    color: #fff;
+    animation: flicker 1.5s infinite alternate;
+    font-size: 20px;
+    font-weight: 600;
+    transition-duration: 1s;
+}
+
+.start_button:hover {
+    text-shadow: 0px 3px 5px #909090;
+    transform: translateY(-0.25em);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    animation: none;
+}
+
+.first_control {
+    display: flex;
+    padding-top: 10%;
+    flex-direction: row;
+
+}
+
+.first_cross {
+    display: none;
+}
+
+.first_cross.show {
+    display: block;
+    background: gray;
+    position: relative;
+    margin-left: 1.6cm;
+    width: 0.6cm;
+    height: 1.8cm;
+}
+.first_cross.show:after {
+    background: gray;
+    content: "";
+    position: absolute;
+    width: 1.8cm;
+    height: 0.6cm;
+    left: -0.6cm;
+    top: 0.6cm;
+}
+
+.first_buttons {
+    display: none;
+}
+
+.first_buttons.show {
+    display: block;
+    background-color: gray;
+    position: relative;
+    margin-left: 40%;
+    margin-top: 5%;
+    top: 0.5cm;
+    width: 0.9cm;
+    height: 0.9cm;
+    border-radius: 100%;
+}
+.first_buttons.show:before {
+    background: gray;
+    content: "";
+    position: absolute;
+    top: -0.9cm;
+    left: -0.9cm;
+    width: 0.9cm;
+    height: 0.9cm;
+    border-radius: 100%;
+}
+.first_buttons.show:after {
+    background: gray;
+    content: "";
+    position: absolute;
+    top: -0.9cm;
+    left: 0.9cm;
+    width: 0.9cm;
+    height: 0.9cm;
+    border-radius: 100%;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+
+.button {
+    display: none;
+}
+
+.button.show {
+    display: block;
+    position: absolute;
+    background-color: gray;
+    margin-left: 5cm;
+    width: 0.3cm;
+    height: 0.8cm;
+    border-radius: 5px;
+}
+
+.button.show::before {
+    display: block;
+    content: "";
+    position: absolute;
+    border: 2px solid gray;
+    width: 0.8cm;
+    height: 1.6cm;
+    top: -0.4cm;
+    left: -0.3cm;
+}
+
+
+
+.coin_img {
+    display: none;
+}
+
+.coin_img.show {
+    display: block;
+    position: relative;
+    width: 1.5cm;
+    margin-left: 11cm;
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+}
