@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'neoDGM';
+    src: url(../fonts/NEODGM.TTF);    
+}
+
 .main_page {
     display: block;
     height: 100%;
@@ -44,6 +49,7 @@
 }
 
 .title {
+    font-family: "neoDGM";
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(241 51 212), 
     0 0 100px rgb(241 51 212), 0 0 10px rgb(241 51 212), 0 0 100px rgb(241 51 212), 0 0 10px rgb(241 51 212);
     font-weight: 900;
@@ -89,12 +95,13 @@
     width: 50%;
     margin: auto;
     background: none;
-    text-align: cener;
+    text-align: center;
     border: 0;
     border-radius: 10px;
+    font-family: 'neoDGM';
     padding: 5px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 800;
     animation: flicker 1.5s infinite alternate;
 }
@@ -134,9 +141,10 @@
     border: 0;
     border-radius: 10px;
     padding: 5px;
-    color: #fff;
+    font-family: 'neoDGM';
+    color: #ffffff;
     animation: flicker 1.5s infinite alternate;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     transition-duration: 1s;
 }

@@ -1,4 +1,6 @@
 .test_result.show {
+    /* background-color: #404040;
+    overflow: auto; */
     display: inline-block;
     text-align: center;
     overflow: auto;

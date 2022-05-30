@@ -41,7 +41,6 @@
           cell.style.transform = "none";
         }
       }
-      console.log(cells.length)
       rotateCarousel();
     }
     
@@ -53,9 +52,21 @@
             carouselItem.className = 'carousel_cell';
             carouselItem.appendChild(carouselImage);
             carousel.appendChild(carouselItem);
-
             cells = carousel.querySelectorAll(".carousel_cell");
             cellCount = cells.length;
+
+            carouselImage.addEventListener('click', () => {
+              const mbti_result = {
+                "esfp": {num : 11},"istp": {num : 12},"isfp": {num : 15},"estp": {num : 13},"intj": {num : 10},"estj": {num : 14},"infp": {num : 16},"infj": {num : 6},"enfp": {num : 2},"entj": {num : 3},"intp": {num : 7},"esfj": {num : 5},"enfj": {num : 1},"entp": {num : 4},"istj": {num : 9},"isfj": {num : 8}
+            }
+              const mbtiArr = ["esfp", "istp", "isfp", "estp", "intj", "estj", "infp", "infj", "enfp", "entj", "intp", "esfj", "enfj", "entp", "istj", "isfj"];
+              for (let i = 0; i < mbtiArr.length; i++) {
+                  const mbti_type = (mbtiArr[i])
+                  if (mbti_result[mbti_type]["num"] === index) {
+                    location.href = `./result_${mbti_type}.html`
+                  }
+              }
+            })
         }
         changeCarousel();
     }

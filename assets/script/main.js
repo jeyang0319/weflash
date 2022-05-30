@@ -6,7 +6,6 @@
     }
 
     const $ready = get('.ready')
-    // const $gameStart = get('.game_start')
     const $question = get('.question')
     const $start = get('.start')
     const $buttons = get('.buttons')
@@ -35,7 +34,6 @@
         $firstButtons.classList.toggle('show')
         $firstCross.classList.toggle('show')
         $display.classList.toggle('show')
-        // $main.classList.toggle('start')
         $title.classList.toggle('start')
         $coin.classList.toggle('start')
         $button.classList.toggle('show')
@@ -43,7 +41,6 @@
     }
 
     const gameReady_button = () => {
-        // $button.classList.toggle('show')
         $buttons.classList.toggle('none')
         $cross.classList.toggle('none')
     }
@@ -63,7 +60,7 @@
 
 
     const coin_move = () => {
-        $coinImg.style.marginRight = 80 + 'px';
+        $coinImg.style.marginRight = 150 + 'px';
         $coinImg.style.opacity = 10 + '%';
     }
 
@@ -76,7 +73,5 @@
         })
     }
     init()
-    // gameReady()
-    // gameStart()
   })()
   

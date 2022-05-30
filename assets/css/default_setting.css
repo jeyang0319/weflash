@@ -78,6 +78,17 @@ body {
     height: 100%;
 }
 
+.display.show {
+    background-color: #404040;
+    color: #fff;
+    font-weight: lighter;
+    font-size: 12px;
+    display: block;
+    justify-items: center;
+    width: 8.1cm;
+    height: 100%;
+}
+
 .control {
     width: 100%;
     height: 100%;
