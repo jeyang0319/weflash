@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>BreakOut</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="title">벽돌 깨기</div>
+        <div class="gameOver">
+            <div class="end">Game Over</div>
+            <button onclick="location.reload()" class="btn" type="button">
+                다시 시작하기
+            </button>
+        </div>
+        <div class="clear">
+            <div class="end">STAGE CLEAR</div>
+            <div class="p">모든 블럭을 다 없앴어요!</div>
+            <button onclick="location.reload()" class="btn" type="button">
+                다시 시작하기
+            </button>
+        </div>
+        <div class="main">
+            <canvas id="gameCanvas" width=600 height=600></canvas>
+            <div class="sub">
+                <div class="life">목숨 : 3</div>
+                <div class="block">남은 블럭 갯수 : 96</div>
+                <div class="menu">
+                    <p>오른쪽으로 움직이기</p><span>방향키</span>
+                    <img src=".//right.png" width="60" alt="오른쪽 화살표" >
+                    <p>왼쪽으로 움직이기</p><span>방향키</span>
+                    <img src=".//left.png" width="60" alt="왼쪽 화살표" >
+                    <p>공 움직이기</p>
+                    <img src=".//space.png" width="60" alt="스페이스바">
+                </div>
+            </div>
+        </div>
+        <script type="module" src="app.js"></script>
+    </body>
+</html>

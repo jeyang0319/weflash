@@ -227,6 +227,7 @@ let mbti = "";
                 $questionPage.classList.toggle('show')
                 $roading.classList.toggle('none')
                 $nextBtn.disabled = true
+                $prevBtn.disabled = true
                 setTimeout(result_show, 3000)
                 $tetris.style.display = "none"
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="game-text">
+            <span class="gameOver">게임 종료</span>
+            <button class="restart" onclick=location.reload()>다시 시작</button>
+        </div>
+        <div class="title">TETRIS</div>
+        <div class="main">
+            <div class="playground">
+                <ul></ul>
+            </div>
+            <div class="subMenu">
+                <div class="sub">점수</div>
+                <div class="score">0</div>
+                <div class="sub">레벨</div>
+                <div class="level">1</div>
+                <div class="sub">next</div>
+                <div class="next">
+                    <ul></ul>
+                </div>
+                <div class="start">GAME<br>START</div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/tetris.js" type="module"></script>
+</body>
+</html>
