@@ -1,6 +1,13 @@
+@font-face {
+    font-family: "NEODGM";
+    src: url(./NEODGM.TTF);
+}
+
+
 .title {
     text-align: center;
     margin: 20px;
+    font-family: "NEODGM";
     font-size: 30px;
     font-weight: 700;
 }
@@ -20,6 +27,7 @@
     margin-left : 50px;
     margin-top : 100px;
     height: 70%;
+    font-family: "NEODGM";
     text-align: center;
 }
 

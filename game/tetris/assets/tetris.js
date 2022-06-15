@@ -197,7 +197,7 @@ function dropBlock() {
     clearInterval(downInterval);
     downInterval = setInterval(() => {
         moveBlock("top", 1)
-    }, 10)
+    }, 15)
 }
 
 function showGameOverText() {

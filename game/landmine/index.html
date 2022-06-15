@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>지뢰찾기</title>
+</head>
+<body>
+    <div class="title">지뢰찾기</div>
+    <input type="number" id = "hor" placeholder="가로" value = "10">
+    <input type="number" id = "ver" placeholder="세로" value = "10">
+    <input type="number" id = "mine" placeholder="지뢰" value = "20">
+    <button id="start">실행</button>
+    <div class="game">
+        <table id="table">
+            <!-- <thead>
+                <tr>
+                    <td><span id = "time">0</span>초</td>
+                </tr>
+            </thead> -->
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>

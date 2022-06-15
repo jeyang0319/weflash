@@ -1,0 +1,36 @@
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 20px;
+}
+
+.game {
+    display: flex;    
+    
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #bbb;
+    text-align: center;
+    line-height: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgb(165, 165, 165);
+}
+
+td.opened {
+    background: white;
+}
+
+td.flag {
+    background: red;
+}
+
+td.question {
+    background: orange;
+}
