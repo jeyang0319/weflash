@@ -1,8 +1,16 @@
 const $tbody = document.querySelector("#table tbody");
+const $timer = document.querySelector(".timer");
+const $easy = document.getElementById("easy");
+const $normal = document.getElementById("normal");
+const $hard = document.getElementById("hard");
+const $start = document.querySelector(".start");
+const $level = document.getElementById('level');
+const $gameover = document.querySelector('.gameover');
+// const $form = document.querySelector(".form");
 const $result = document.querySelector("#result");
-const row = 10; // 줄
-const cell = 10; // 칸
-const mine = 10; // 지뢰 갯수
+let row = 10; // 줄
+let cell = 10; // 칸
+let mine = 10; // 지뢰 갯수
 
 const code = {
     NORMAL: -1,
@@ -15,6 +23,60 @@ const code = {
 };
 
 let data;
+let openCount;
+let startTime;
+let interval;
+
+function onSubmit() {
+    // event.preventDefault(); //form에 preventDefault()안하면 폼이 새로고침 됨
+    openCount = 0;
+    clearInterval(interval);
+    $timer.textContent = '0초';
+    $tbody.innerHTML = '';
+    drawTable()
+    let startTime = new Date();
+    interval = setInterval(() => {
+        const time = Math.floor((new Date() - startTime) / 1000);
+        $timer.textContent = `${time}초`;
+        }, 1000) //1초마다
+}
+
+$start.addEventListener('click', () => {
+    onSubmit();
+});
+
+
+function chooseLevel() {
+   if ($easy.checked) {
+    row = 10;
+    cell = 10;
+    mine = 10;
+   } else if ($normal.checked) {
+    row = 20;
+    cell = 20;
+    mine = 40;
+   } else if ($hard.checked) {
+    row = 30;
+    cell = 30;
+    mine = 90;
+   }
+}
+
+// function chooseHeight() {
+//     const tdCell = document.querySelector('.tdCell')
+//     if ($easy.checked) {
+//         $td.style.height = '30';
+//         $td.style.width = '30';
+//        } else if ($normal.checked) {
+//         tdCell.style.height = '20px';
+//         tdCell.style.width = '20px';
+//        } else if ($hard.checked) {
+//         tdCell.style.height = '10px';
+//         tdCell.style.width = '10px';
+//        }
+// }
+
+// chooseLevel();
 
 function plantMine() {
     const candidate = Array(row * cell).fill().map((arr, i) => {
@@ -51,7 +113,7 @@ function onRightClick(event) { // 우클릭으로 깃발 꼽기
     if (cellData === code.MINE) { //지뢰면
         data[rowIndex][cellIndex] = code.QUESTION_MINE; //물음표 지뢰로
         target.className = 'question';
-        target.textContent = "?";
+        target.textContent = "🏁";
         console.log(rowIndex, cellIndex);
     } else if (cellData === code.QUESTION_MINE) { //물음표 지뢰면
         data[rowIndex][cellIndex] = code.FLAG_MINE; // 깃발 지뢰로
@@ -61,12 +123,12 @@ function onRightClick(event) { // 우클릭으로 깃발 꼽기
     } else if (cellData === code.FLAG_MINE) { // 깃발 지뢰면
         data[rowIndex][cellIndex] = code.MINE; // 지뢰로
         target.className = '';
-        target.textContent = 'X';
+        target.textContent = '';
         console.log(rowIndex, cellIndex);
     } else if (cellData === code.NORMAL) { // 닫힌 칸이면
         data[rowIndex][cellIndex] = code.QUESTION; // 물음표로
         target.className = 'question';
-        target.textContent = '?';
+        target.textContent = '🏁';
         console.log(rowIndex, cellIndex);
     } else if (cellData === code.QUESTION) {
         data[rowIndex][cellIndex] = code.FLAG;
@@ -96,6 +158,46 @@ function countMine(rowIndex, cellIndex) {
 
 }
 
+function open(rowIndex, cellIndex) {
+    if (data[rowIndex]?.[cellIndex] >= code.OPENED) return; //한번 열었던 칸은 다시 열지 않음
+    const target = $tbody.children[rowIndex]?.children[cellIndex];
+    if (!target) {
+        return;
+    }
+    const count = countMine(rowIndex, cellIndex);
+    target.textContent = count || '';
+    target.className = 'opened';
+    data[rowIndex][cellIndex] = count;
+    openCount++;
+    if (openCount === row * cell - mine) {
+        const time = Math.floor((new Date() - startTime) / 1000);
+        clearInterval(interval);
+        $tbody.removeEventListener('contextmenu', onRightClick);
+        $tbody.removeEventListener('click', onLeftClick);
+        setTimeout(() => { //화면이 바뀔 수 있는 시간 주기
+            alert(`승리했습니다! ${time}초가 걸렸습니다.`)
+        }, 0)
+    }
+
+    return count;
+}
+
+function openAround(rI, cI) {
+    setTimeout(() => {
+        const count = open(rI, cI);
+        if (count === 0) {
+            openAround(rI - 1, cI -1);
+            openAround(rI - 1, cI);
+            openAround(rI - 1, cI + 1);
+            openAround(rI, cI - 1);
+            openAround(rI, cI + 1);
+            openAround(rI + 1, cI - 1);
+            openAround(rI + 1, cI);
+            openAround(rI + 1, cI + 1);
+        } 
+    }, 0)
+}
+
 function onLeftClick(event) {
     const target = event.target;
     const rowIndex = target.parentNode.rowIndex;
@@ -103,30 +205,34 @@ function onLeftClick(event) {
     const cellData = data[rowIndex][cellIndex];
     console.log(rowIndex, cellIndex)
     if (cellData === code.NORMAL) {
-        const count = countMine(rowIndex, cellIndex);
-        target.textContent = count || '';
-        target.className = 'opened';
-        data[rowIndex][cellIndex] = count;
+        openAround(rowIndex, cellIndex);
     } else if (cellData === code.MINE) {
-        //펑
+        target.textContent = '펑';
+        target.className = 'opened';
+        clearInterval(interval);
+        $tbody.removeEventListener('contextmenu', onRightClick);
+        $tbody.removeEventListener('click', onLeftClick);
+        $gameover.style.display = 'flex';
     }
 }
 
 function drawTable() {
+    chooseLevel();
     data = plantMine();
     data.forEach((row) => {
         const $tr = document.createElement('tr');
         row.forEach((cell) => {
             const $td = document.createElement('td');
+            // $td.className = 'tdCell'
+            // chooseHeight();
             if (cell === code.MINE) {
-                $td.textContent = 'X' //개발 편의를 위해
+                // $td.textContent = '.' //개발 편의를 위해
             };
             $tr.append($td);
+            
         });
         $tbody.append($tr);
         $tbody.addEventListener('contextmenu', onRightClick); //우클릭
         $tbody.addEventListener('click', onLeftClick); //좌클릭
     });
 };
-
-drawTable();

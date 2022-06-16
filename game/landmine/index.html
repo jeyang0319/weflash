@@ -9,10 +9,31 @@
 </head>
 <body>
     <div class="title">지뢰찾기</div>
-    <input type="number" id = "hor" placeholder="가로" value = "10">
-    <input type="number" id = "ver" placeholder="세로" value = "10">
-    <input type="number" id = "mine" placeholder="지뢰" value = "20">
-    <button id="start">실행</button>
+    <div class="gameover">
+        <div class="end">Game Over</div>
+            <button onclick="location.reload()" class="btn" type="button">
+                다시 시작하기
+            </button>
+    </div>
+    <div class="sub">
+        <input type="radio" name = 'level' id = 'easy' value = 'easy' checked/><label for = "easy">EASY</label>
+        <input type="radio" name = 'level' id = 'normal' value = 'normal' /><label for = "normal">NORMAL</label>
+        <input type="radio" name = 'level' id = 'hard' value = 'hard' /><label for = "hard">HARD</label>
+        <div class="start">START</div>
+
+
+        <!-- <div class="easy">EASY</div>
+        <div class="normal">NORAML</div>
+        <div class="hard">HARD</div>
+        <div class="start">START</div> -->
+    </div>
+    <div class="timer"> 0초</div>
+    <!-- <form class="form">
+        <input type="number" id = "row" placeholder="가로" size = "5">
+        <input type="number" id = "cell" placeholder="세로" size = "5">
+        <input type="number" id = "mine" placeholder="지뢰" size ="5">
+        <button id="start">실행</button>
+    </form> -->
     <div class="game">
         <table id="table">
             <!-- <thead>
