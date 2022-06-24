@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "NEODGM";
+    src: url(./NEODGM.TTF);
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "NEODGM";
+    margin-top: 30px;
+}
+
+.guide {
+    display: block;
+    border: 1px solid #333;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: "NEODGM";
+    font-size: 20px;
+    line-height: 200%;
+}
+
+.game {
+    justify-content: center;
+    margin: 1% 10% 0 10%;
+}
+
+.mainStart {
+    text-align: end;
+    font-family: "NEODGM";
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.start, .restart {
+    display: none;
+    text-align: end;
+    font-family: "NEODGM";
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 120px;
+    margin: 0 auto;
+    perspective: 140px;
+    cursor: pointer;
+}
+
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: "NEODGM";
+    font-size: 100px;
+    padding-top: 10px;
+    font-weight: 800;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.gameStart, .gameOver, .win {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    font-family: "NEODGM";
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+}
+
+.btn {
+    margin: 20px;
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "NEODGM";
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 800;;
+    transition: 0.25s;
+    border: 3px solid #f8e6e0;
+    color: #6e6e6e;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #f8e6e0;
+    color: #6e6e6e;
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    margin-top: 15px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio]+label {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    height: 24px;
+    width: 90px;
+    border: 1px solid #333;
+    line-height: 24px;
+    font-family: "NEODGM";
+    text-align: center;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+input[type=radio]:checked+label {
+    background-color: #333;
+    color: #fff;
+}

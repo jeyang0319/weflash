@@ -221,7 +221,7 @@ let mbti = "";
                 $answer2.classList.toggle('click')
             }
             
-            if (num == 0) {
+            if (num == 19) {
                 tetrisLast()
                 cal()
                 $questionPage.classList.toggle('show')
@@ -231,7 +231,6 @@ let mbti = "";
                 setTimeout(result_show, 3000)
                 $tetris.style.display = "none"
 
-                console.log(mbti_result.findIndex(i => i.num == 0))
             } else {
                 num++
                 test()

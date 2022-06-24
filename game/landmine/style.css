@@ -1,11 +1,17 @@
+@font-face {
+    font-family: "NEODGM";
+    src: url(./NEODGM.TTF);
+}
+
 .title {
+    font-family: "NEODGM";
     text-align: center;
     font-size: 30px;
     font-weight: 800;
     margin: 20px;
 }
 
-.gameover {
+.gameover, .success {
     display: none;
     justify-content: center;
     align-items: center;
@@ -19,7 +25,17 @@
 }
 
 .end {
-    font-size: 50px;
+    font-family: "NEODGM";
+    font-size: 40px;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 2px gray; 
+}
+
+.ment {
+    font-family: "NEODGM";
+    font-size: 25px;
     color: #fff;
     font-weight: 800;
     margin-bottom: 20px;
@@ -29,16 +45,17 @@
 .game {
     display: flex;   
     justify-content: center; 
-    
 }
 
 .timer {
+    font-family: "NEODGM";
     display: flex;
     font-size: 20px;
     font-weight: 800;
     margin-right: 20%;
     justify-content: flex-end;
 }
+
 .sub {
     display: flex;
     align-items: center;
@@ -58,6 +75,7 @@ input[type=radio]+label {
     width: 90px;
     border: 1px solid #333;
     line-height: 24px;
+    font-family: "NEODGM";
     text-align: center;
     font-weight: 800;
     font-size: 13px;
@@ -75,7 +93,6 @@ input[type=radio]:checked+label {
     border: 1px solid #333;
     font-size: 13px;
     font-weight: 800;
-
 }
 
 table {
@@ -85,6 +102,7 @@ table {
 td {
     border: 1px solid #bbb;
     text-align: center;
+    font-family: "NEODGM";
     font-size: 10px;
     width: 15px;
     height: 15px;
@@ -96,11 +114,11 @@ td.opened {
 }
 
 td.flag {
-    background: red;
+    background: rgb(255, 189, 67);
 }
 
-td.question {
-    background: orange;
+td.pung {
+    background: red;
 }
 
 .btn {

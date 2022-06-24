@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>기억력 테스트 게임</title>
+</head>
+<body>
+    <div class="title">기억력 테스트 게임</div>
+    <div class="game">
+        <div class="sub">
+            <div class="level">
+                <input type="radio" name = 'level' id = 'easy' value = 'easy' checked/><label for = "easy">EASY</label>
+                <input type="radio" name = 'level' id = 'normal' value = 'normal' /><label for = "normal">NORMAL</label>
+                <input type="radio" name = 'level' id = 'hard' value = 'hard' /><label for = "hard">HARD</label>
+            </div>
+            <div class="mainStart">CHOOSE</div>
+            <div class="start">START</div>
+            <div class="restart" onclick="location.reload()">RESTART</div>
+        </div>
+        <div class="guide">
+            게임 방법!!<br>1. 난이도를 선택한 후 CHOOSE 버튼을 누른다<br>2. START 버튼을 누르고 뒤집히는 카드의 순서를 외운다<br>3. '게임을 시작하세요'라는 안내 화면이 뜨면 외운 순서대로 카드를 클릭한다<br>4. 순서를 틀리지 않고 모든 카드를 뒤집으면 승리!
+        </div>
+        <div class="container"></div>
+    </div>
+    <div class="gameStart">게임을 시작하세요</div>
+    <div class="win">성공!
+        <button onclick="location.reload()" class="btn" type="button">
+            다시 시작하기
+        </button>
+    </div>
+    <div class="gameOver">
+        <div class="end"></div>
+        <button onclick="location.reload()" class="btn" type="button">
+            다시 시작하기
+        </button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
