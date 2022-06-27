@@ -1,7 +1,6 @@
 const ver = 4; // 가로
 let hor = 2; // 세로
 let speed = 500;
-let openTime = 5500;
 const container = document.querySelector(".container");
 const guide = document.querySelector(".guide");
 const mainStart = document.querySelector(".mainStart");
@@ -30,16 +29,13 @@ let arr = [];
 function chooseLevel() {
   if ($easy.checked) {
    hor = 1;
-   speed = 800;
-   openTime = 4000;
+   speed = 700;
   } else if ($normal.checked) {
    hor = 2;
-   speed = 650;
-   openTime = 4800;
+   speed = 600;
   } else if ($hard.checked) {
    hor = 3;
    speed = 500;
-   openTime = 5300;
   }
   for (i = 1; i < ver * hor + 1; i++) {
     arr.push(i)
@@ -109,11 +105,11 @@ function cardArr() {
 
   setTimeout(() => {
     startPage.style.display = 'flex';
-  }, 700 + ver * hor * 600);
+  }, 700 + ver * hor * speed);
 
   setTimeout(() => {
     startPage.style.display = 'none';
-  }, 1700 + ver * hor * 600)
+  }, 1700 + ver * hor * speed)
   gameStart();
 }
 
@@ -139,14 +135,13 @@ function gameStart() {
             mother.classList.remove("flipped");
           }, 1000);
           gameOver.style.display = "flex";
-          end.innerHTML = `틀렸어요..
-          정답 순서는 ${arr}이에요`
+          end.innerHTML = `틀렸어요.. <br>정답은<br>${arr}이에요`
           
           return
         }
         
       })
-    }, openTime)
+    }, 5500)
   }
 }
 

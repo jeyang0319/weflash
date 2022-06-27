@@ -124,11 +124,13 @@
     border: 3px solid #f8e6e0;
     color: #6e6e6e;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #f8e6e0;
     color: #6e6e6e;
+    cursor: pointer;
 }
 
 .sub {
