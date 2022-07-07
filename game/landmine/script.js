@@ -138,7 +138,7 @@ function open(rowIndex, cellIndex) {
     openCount++;
     if (openCount === row * cell - mine) {
         clearInterval(interval);
-        $tbody.removeEventListener('contextmenu', onRightClick);
+        $tbody.removeEventListener('ctxmenu', onRightClick);
         $tbody.removeEventListener('click', onLeftClick);
         $success.style.display = 'flex';
         const successTime = $timer.innerHTML;
@@ -174,7 +174,7 @@ function onLeftClick(event) {
         target.textContent = '💣';
         target.className = 'pung';
         clearInterval(interval);
-        $tbody.removeEventListener('contextmenu', onRightClick);
+        $tbody.removeEventListener('ctxmenu', onRightClick);
         $tbody.removeEventListener('click', onLeftClick);
         $gameover.style.display = 'flex';
     }
@@ -194,7 +194,7 @@ function drawTable() {
             
         });
         $tbody.append($tr);
-        $tbody.addEventListener('contextmenu', onRightClick); //우클릭
+        $tbody.addEventListener('ctxmenu', onRightClick); //우클릭
         $tbody.addEventListener('click', onLeftClick); //좌클릭
     });
 };

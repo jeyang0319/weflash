@@ -36,15 +36,17 @@ init()
 function init() {
 
     tempMovingItem = { ...movingItem };
+    console.log(tempMovingItem + '1');
     for (let i = 0; i < rows; i++) {
         prependNewLine()
     }
 
     tempMovingItem = { ...movingItem };
+    console.log(tempMovingItem + '2');
     for (let i = 0; i < 4; i++) {
         nextBlock()
     }
-    prev();
+    // prev();
 
     // generateNewBlock();
 }
@@ -52,6 +54,7 @@ function init() {
 startBtn.addEventListener("click", () => {
     startBtn.style.display = "none";
     generateNewBlock();
+    prev();
 
 })
 
@@ -171,8 +174,14 @@ function generateNewBlock() {
     movingItem.top = 0;
     movingItem.left = 3;
     movingItem.direction = 0;
-    tempMovingItem = { ...movingItem };
+    if (tempMovingItem) {
+        tempMovingItem = { ...movingItem };
+    } else {
+        console.log('X');
+        return
+    }
     renderBlocks();
+    console.log(tempMovingItem);
 }
 
 function checkEmpty(target) {
@@ -226,11 +235,3 @@ document.addEventListener("keydown", e => {
             break;
     }
 })
-
-// restartBtn.addEventListener("click", () => {
-//     playground.innerHTML = ""; //초기화
-//     next.innerHTML = "";
-//     gameText.style.display = "none";
-//     init();
-//     generateNewBlock();
-// })
