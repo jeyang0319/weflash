@@ -105,7 +105,9 @@ body {
 
 .subMenu {
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    width: 100px;
     padding-left: 20px;
     text-align: center;
 }
@@ -122,33 +124,10 @@ body {
     margin: 0 auto;
 }
 
-.next > ul {
-    border : 3px solid #333;
-    width: 100px;
-    margin: 0 auto;
-}
-
-.next > ul > li {
-    width: 100%;
-    height: 25px;
-}
-
 .playground > ul > li{
     width: 100%;
     height: 25px;
 }
-
-.next > ul > li > ul {
-    display: flex;
-}
-
-.next > ul > li > ul > li {
-    width: 25px;
-    height: 25px;
-    outline: 1px solid #333;
-    background-color: #fff;
-}
-
 
 .playground > ul > li > ul{
     display: flex;

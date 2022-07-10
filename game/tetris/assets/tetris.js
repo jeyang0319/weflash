@@ -36,40 +36,15 @@ init()
 function init() {
 
     tempMovingItem = { ...movingItem };
-    console.log(tempMovingItem + '1');
     for (let i = 0; i < rows; i++) {
         prependNewLine()
     }
-
-    tempMovingItem = { ...movingItem };
-    console.log(tempMovingItem + '2');
-    for (let i = 0; i < 4; i++) {
-        nextBlock()
-    }
-    // prev();
-
-    // generateNewBlock();
 }
 
 startBtn.addEventListener("click", () => {
     startBtn.style.display = "none";
     generateNewBlock();
-    prev();
-
 })
-
-function nextBlock() {
-    const li2 = document.createElement("li");
-    const ul2 = document.createElement("ul");
-    for (let j = 0; j < 4; j++) {
-        const matrix = document.createElement("li");
-        ul2.prepend(matrix);
-    }
-    li2.prepend(ul2)
-    next.prepend(li2)
-
-
-}
 
 function prependNewLine() {
     const li = document.createElement("li");
@@ -114,15 +89,6 @@ function renderBlocks(moveType = "") {
     movingItem.left = left;
     movingItem.top = top;
     movingItem.direction = direction;
-}
-
-function prev() {
-    const blockArray = Object.entries(blocks);
-    const randomIndex = Math.floor(Math.random() * blockArray.length)
-    movingItem.type = blockArray[randomIndex][0]
-    console.log(movingItem.type);
-    console.log(blocks[movingItem.type][0][1][0])
-
 }
 
 function seizeBlock() { //밑에 더이상 내려갈 곳이 없으면 더이상 움직이지 않게 고정
@@ -181,7 +147,6 @@ function generateNewBlock() {
         return
     }
     renderBlocks();
-    console.log(tempMovingItem);
 }
 
 function checkEmpty(target) {
