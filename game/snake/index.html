@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>snake</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="title">지렁이 게임</div>
+      <div class="dis">
+        지렁이가 케이크를 먹고 무럭무럭 자랄 수 있도록 도와주세요!<br><br><span>경고!!</span><br><br>- 지렁이의 머리가 자신의 몸에 닿으면 죽어요..ㅠ<br>- 지렁이가 벽에 닿으면 죽어요..ㅠ
+      </div>
+      <canvas width="300" height="300" class="canvas">
+      </canvas>
+      <div class="scorePage">점수 : <span class="score">0</span> 점</div>
+      <button type="button" class="js-play">PLAY</button>
+    </main>
+    <div class="gameOver">
+      <div class="end">GAME OVER..</div>
+      <div>당신의 점수는 <span class="record"></span>점 입니다.</div>
+      <button class="restart" type="button">
+          다시 시작하기
+      </button>
+  </div>
+    <script src="script.js"></script>
+  </body>
+</html>

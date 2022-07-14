@@ -1,7 +1,8 @@
 @font-face {
     font-family: "NEODGM";
-    src: url(./NEODGM.TTF);
+    src: url(../../assets/fonts/NEODGM.TTF);
 }
+
 body {
     background-color: rgb(206, 206, 206);
 }

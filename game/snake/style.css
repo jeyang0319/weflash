@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "NEODGM";
+    src: url(../../assets/fonts/NEODGM.TTF);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: "NEODGM";
+}
+
+.title {
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+canvas {
+  margin: 0 auto 30px;
+  width: 400px;
+  max-width: 100%;
+  border: 2px solid #000;
+}
+
+.dis {
+  width: 370px;
+  margin-bottom: -180px;
+  padding-top: 30px;
+  font-size: 20px;
+  font-weight: normal;
+}
+.dis span {
+  color: red;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.scorePage {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.gameOver{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  font-family: "NEODGM";
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+}
+
+.end {
+  color: rgb(255, 66, 66);
+  margin: 20px;
+}
+
+.restart, .js-play {
+  margin: 20px;
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 800;;
+  transition: 0.25s;
+  border: 3px solid #f8e6e0;
+  color: #6e6e6e;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.restart:hover, .js-play:hover {
+  background-color: #f8e6e0;
+  color: #6e6e6e;
+  cursor: pointer;
+}
